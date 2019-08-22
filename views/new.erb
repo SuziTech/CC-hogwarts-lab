@@ -1,5 +1,3 @@
-<% houses = House.all %>
-
 <form method="post" action="/students">
 
   <label for="first-name-field">First Name:</label>
@@ -22,8 +20,8 @@
 
   <label for="house_select">Select House:</label>
   <select name="house_id" id="house_select">
-    <% for house in houses do %>
-    <option value=houses.id><% houses[0].name %></option>
+    <% @houses.each do |house| %>
+    <option value=<%= house.id %>><%= house.name.capitalize %></option>
     <% end %>
 
 
